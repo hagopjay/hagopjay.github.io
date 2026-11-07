@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HagopJay</title>
+<meta name="description" content="X3D, AI and a validator that holds the AI accountable. Demos, repositories and memes.">
+<style>
+/* Layout: a single stage column. Name and tagline, the blurb, three doors (demos, live collider, code), a short meme wall, versions. */
+:root{--bg:#f4f5f7;--fg:#14171c;--mute:#566070;--line:#d4d9e1;--card:#ffffff;--accent:#0b6bcb;--chip:#e6ebf2;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0f14;--fg:#e8ecf2;--mute:#9aa5b5;--line:#252c38;--card:#141922;--accent:#5eb0ff;--chip:#1c2330;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--fg:#e8ecf2;--mute:#9aa5b5;--line:#252c38;--card:#141922;--accent:#5eb0ff;--chip:#1c2330;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-block:40px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:960px;margin:0 auto}
+h1{font-size:2.6rem;line-height:1.05;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:1.15rem;margin:0 0 6px;text-wrap:balance}
+p{margin:0 0 10px;max-width:68ch}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tag{font-family:var(--mono);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 22px}
+.blurb{padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;background:var(--card)}
+.blurb p:last-child{margin-bottom:0}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin:28px 0}
+.door{display:flex;flex-direction:column;gap:8px;min-width:0;padding-top:12px;border-top:1px solid var(--line)}
+.door img{width:100%;height:auto;aspect-ratio:16/9;border-radius:6px;display:block;background:#05070a}
+.door .k{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+.door .links{display:flex;flex-wrap:wrap;gap:8px}
+.door .links a{font-size:.88rem;padding:4px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line);text-decoration:none}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px;margin-top:10px}
+.wall figure{margin:0}.wall img{width:100%;height:auto;aspect-ratio:16/9;border-radius:6px;display:block;background:#05070a}
+.memes{padding-top:18px;border-top:1px solid var(--line)}
+.facts{font-size:.9rem;color:var(--mute)}
+footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:.92rem;color:var(--mute)}
+code{font-family:var(--mono);font-size:.88em}
+</style>
+</head>
+<body>
+<main>
+<h1>HagopJay</h1>
+<p class="tag">3D conqueror by night</p>
+
+<section class="blurb" aria-label="About">
+<p>Somewhere around the late '90s I met X3D and never got over it. Now I make AI models write 3D worlds and then hand them to a validator that tells them, exactly and without mercy, what they got wrong. I call it <em>the tether</em>, because X3D is the 3D format an AI can be held accountable to. My colleagues call it “why is that laptop fan screaming again.”</p>
+<p>Things I have, technically, built: a particle collider, a drift racing game, a glass brain, a turkey made of ontologies with a sun for a heart, and a space elevator nobody asked for. Things I have, technically, not done: sleep.</p>
+<p>Motto: <em>valid is not the same as visible.</em> Second motto: <em>one more demo.</em></p>
+</section>
+
+<section class="doors" aria-label="Where to go">
+  <div class="door">
+    <img src="../../assets/dijet.jpg" alt="A generated particle collision inside a glass detector" width="640" height="360">
+    <span class="k">The trophy room</span>
+    <h2>x3d.demo</h2>
+    <p>Every X3D demo, in the order they were asked for. WebGPU collider events, a synthetic heritage facade and more on the way.</p>
+    <div class="links"><a href="https://hagopjay.github.io/x3d.demo/">Open the demos</a><a href="https://github.com/hagopjay/x3d.demo">Repository</a></div>
+  </div>
+  <div class="door">
+    <img src="../../assets/facade.jpg" alt="A synthetic sandstone facade drawn as Gaussian splats" width="640" height="360">
+    <span class="k">Live collider</span>
+    <h2>Collider on WebGPU</h2>
+    <p>One generated collision, written as X3D and drawn with WebGPU.</p>
+    <div class="links"><a href="https://hagopjay.github.io/dirac/docs/webgpu/">Open the collider</a></div>
+  </div>
+  <div class="door">
+    <span class="k">The code</span>
+    <h2>Repositories</h2>
+    <p>The tools behind the demos: the Loom, the Blender exporter, the MCP server and the ML pipeline.</p>
+    <div class="links">
+      <a href="https://github.com/hagopjay/x3d.loom">x3d.loom</a>
+      <a href="https://github.com/hagopjay/x3d-blender-io">x3d-blender-io</a>
+      <a href="https://github.com/hagopjay/x3d_mcp">x3d_mcp</a>
+      <a href="https://github.com/hagopjay/x3d.ML">x3d.ML</a>
+    </div>
+  </div>
+</section>
+
+<section class="memes" aria-label="Meme wall">
+  <h2>The meme wall</h2>
+  <p class="facts">Made from frames of the demos. WebGPU on an older Intel GPU and Chrome says no? Open <code>chrome://flags/#enable-unsafe-webgpu</code>, set it to Enabled and relaunch.</p>
+  <div class="wall">
+    <figure><img src="../../assets/memes/one-more-demo.jpg" alt="Collider event captioned: Me, one quick demo. Also me, 4 AM, adding bloom." width="960" height="540" loading="lazy"></figure>
+    <figure><img src="../../assets/memes/validator.jpg" alt="Two muon tracks captioned: the validator says line 4,821, ROUTE before DEF. Me: it was vibes." width="960" height="540" loading="lazy"></figure>
+    <figure><img src="../../assets/memes/tomb.jpg" alt="Synthetic facade captioned: AI says it scanned a real tomb. It is 140,000 synthetic splats." width="960" height="540" loading="lazy"></figure>
+    <figure><img src="../../assets/memes/laptop-fan.jpg" alt="Synthetic facade captioned: my laptop fan sorting 140,000 splats." width="960" height="540" loading="lazy"></figure>
+    <figure><img src="../../assets/memes/valid-visible.jpg" alt="Collider event captioned: valid is not the same as visible." width="960" height="540" loading="lazy"></figure>
+    <figure><img src="../../assets/memes/unsafe-flag.jpg" alt="Collider event captioned: Chrome says WebGPU is blocklisted. Me: enable-unsafe-webgpu." width="960" height="540" loading="lazy"></figure>
+  </div>
+</section>
+
+<footer>
+  <p><b>Versions of this page.</b> <a href="index.html">v1</a> (this one). Every version stays in the repository and none is overwritten; the newest copy is also the front page. See <a href="https://github.com/hagopjay/hagopjay.github.io/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
+</footer>
+</main>
+</body>
+</html>
